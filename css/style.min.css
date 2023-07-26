@@ -1,0 +1,162 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  inline-size: 100%;
+  block-size: 100%;
+  font-size: 16px;
+  line-height: 1;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+input,
+textarea {
+  caret-color: currentColor;
+}
+input::placeholder,
+textarea::placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+button {
+  font-size: inherit;
+  background: none;
+}
+button:not(:disabled) {
+  cursor: pointer;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: none;
+}
+
+textarea {
+  resize: none;
+}
+
+a {
+  color: inherit;
+}
+a, a:visited, a:hover {
+  text-decoration: none;
+}
+a:focus, a:active {
+  outline: none;
+}
+
+ul,
+ul li,
+ol,
+ol li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+address {
+  font-style: normal;
+}
+
+dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  overflow: auto;
+}
+dialog[open] {
+  opacity: 1;
+  visibility: visible;
+}
+
+.swiper {
+  user-select: none;
+}
+
+.ibg {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+.ibg img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
+body {
+  font-family: "Gotham Pro", sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.8);
+}
+.lock body {
+  overflow: hidden;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-block-size: 100%;
+  overflow: hidden;
+}
+
+.container {
+  max-inline-size: 1560px;
+  margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.main {
+  flex: 1 1 auto;
+}
