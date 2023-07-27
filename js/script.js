@@ -597,6 +597,11 @@ class HeaderObservers {
 
 
 
+;// CONCATENATED MODULE: ./src/js/scripts/scripts/header-observers.js
+
+
+const headerObservers = new HeaderObservers();
+
 ;// CONCATENATED MODULE: ./src/js/modules/scrolling.js
 
 
@@ -881,8 +886,20 @@ class Burger {
 
 
 
+;// CONCATENATED MODULE: ./src/js/scripts/scripts/burger.js
+
+
+const burger = new Burger({
+  breakpoint: 1500,
+});
+
 // EXTERNAL MODULE: ./src/js/modules/spoilers.js
 var spoilers = __webpack_require__(635);
+;// CONCATENATED MODULE: ./src/js/scripts/scripts/spoilers.js
+
+
+const spoilers_spoilers = new spoilers/* Spoilers */.r();
+
 ;// CONCATENATED MODULE: ./src/js/scripts/scripts/up.js
 /** @type {HTMLButtonElement} */
 const upButton = document.querySelector(".up");
@@ -897,17 +914,11 @@ upButton?.addEventListener("click", () => {
 ;// CONCATENATED MODULE: ./src/js/scripts/scripts.js
 
 
+
+
+
 ;// CONCATENATED MODULE: ./src/js/script.js
 
-
-
-
-
-const headerObservers = new HeaderObservers();
-const burger = new Burger({
-  breakpoint: 1500,
-});
-const script_spoilers = new spoilers/* Spoilers */.r();
 
 }();
 /******/ })()
