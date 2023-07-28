@@ -11764,7 +11764,6 @@ if (newsSlider) {
     },
     keyboard: {
       enabled: true,
-      onlyInViewport: true,
       pageUpDown: false,
     },
     slidesPerView: 1,
@@ -11797,7 +11796,39 @@ if (newsSlider) {
   newsSliderResizeObserver.observe(newsSlider);
 }
 
+;// CONCATENATED MODULE: ./src/js/libraries/swiper/sliders/events-slider.js
+
+
+/** @type {HTMLDivElement} */
+const eventsSlider = document.querySelector(".events-slider");
+
+if (eventsSlider) {
+  const slider = new core(eventsSlider, {
+    modules: [Keyboard, Navigation,],
+    navigation: {
+      nextEl: ".events__arrow--next",
+      prevEl: ".events__arrow--prev",
+    },
+    keyboard: {
+      enabled: true,
+      pageUpDown: false,
+    },
+    slidesPerView: 1,
+    spaceBetween: 32,
+    loop: true,
+    breakpoints: {
+      993: {
+        slidesPerView: 2,
+      },
+      1441: {
+        slidesPerView: 3,
+      }
+    },
+  });
+}
+
 ;// CONCATENATED MODULE: ./src/js/libraries/swiper/swiper.js
+
 
 
 ;// CONCATENATED MODULE: ./src/js/libraries/libraries.js
