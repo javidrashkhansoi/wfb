@@ -11749,48 +11749,52 @@ function EffectCards({
 
 
 
-;// CONCATENATED MODULE: ./src/js/libraries/swiper/sliders/hero-slider.js
+;// CONCATENATED MODULE: ./src/js/libraries/swiper/sliders/news-slider.js
 
 
 /** @type {HTMLDivElement} */
-const heroSlider = document.querySelector(".hero-slider");
+const newsSlider = document.querySelector(".news-slider");
 
-if (heroSlider) {
-  const slider = new core(heroSlider, {
+if (newsSlider) {
+  const slider = new core(newsSlider, {
     modules: [Keyboard, Navigation,],
     navigation: {
-      nextEl: ".hero-arrows__button--next",
-      prevEl: ".hero-arrows__button--prev",
+      nextEl: ".news-slider-arrows__button--next",
+      prevEl: ".news-slider-arrows__button--prev",
     },
     keyboard: {
       enabled: true,
       onlyInViewport: true,
       pageUpDown: false,
     },
-    slidesPerView: 2,
+    slidesPerView: 1,
     spaceBetween: 32,
     loop: true,
     breakpoints: {
+      501: {
+        slidesPerView: 2,
+      },
       1101: {
         slidesPerView: 3,
       }
     },
   });
 
-  const heroSliderImage = heroSlider.querySelector(".news-card__image");
+  const newsSliderResizeObserver = new ResizeObserver(entries => {
+    entries.forEach(entry => {
+      /** @type {{target: HTMLDivElement}} */
+      const { target } = entry;
+      const newsSliderImage = target.querySelector(".swiper-slide-active .news-card__image");
 
-  if (heroSliderImage) {
-    const heroSliderImageResizeObserver = new ResizeObserver(entries => {
-      entries.forEach(entry => {
-        const { borderBoxSize } = entry;
-        const { blockSize } = borderBoxSize[0];
+      if (newsSliderImage) {
+        const newsSliderImageBlockSize = parseInt(getComputedStyle(newsSliderImage).blockSize);
 
-        heroSlider.style.setProperty("--image-height", `${blockSize / 2}px`);
-      });
+        target.style.setProperty("--image-height", `${newsSliderImageBlockSize / 2}px`);
+      }
     });
+  });
 
-    heroSliderImageResizeObserver.observe(heroSliderImage);
-  }
+  newsSliderResizeObserver.observe(newsSlider);
 }
 
 ;// CONCATENATED MODULE: ./src/js/libraries/swiper/swiper.js
