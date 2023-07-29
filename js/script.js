@@ -1099,7 +1099,41 @@ if (youtubeBlocks.length) {
   });
 }
 
+;// CONCATENATED MODULE: ./src/js/scripts/scripts/tabs.js
+/** @type {NodeListOf<HTMLDivElement>} */
+const tabs = document.querySelectorAll("[data-tabs]");
+
+tabs?.forEach(tab => {
+  /** @type {NodeListOf<HTMLButtonElement>} */
+  const buttons = tab.querySelectorAll("[data-tab]");
+  /** @type {NodeListOf<HTMLDivElement>} */
+  const panels = tab.querySelectorAll("[data-panel]");
+
+  if (buttons.length === panels.length) {
+    buttons?.forEach(button => {
+      button.addEventListener("click", event => {
+        /** @type {{currentTarget: HTMLButtonElement}} */
+        const { currentTarget } = event;
+        const { tab: tabData } = currentTarget.dataset;
+
+        if (tabData) {
+          buttons.forEach(button => {
+            button.classList.toggle("active", currentTarget === button);
+          });
+
+          panels.forEach(panel => {
+            const { panel: panelData } = panel.dataset;
+
+            panel.classList.toggle("active", tabData === panelData);
+          });
+        }
+      });
+    });
+  }
+});
+
 ;// CONCATENATED MODULE: ./src/js/scripts/scripts.js
+
 
 
 
