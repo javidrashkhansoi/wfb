@@ -8001,6 +8001,7 @@ if (youtubeBlocks.length) {
       const img = document.createElement("img");
 
       img.src = `https://i.ytimg.com/vi/${video}/sddefault.jpg`;
+      img.alt = "";
       youtube.insertAdjacentElement("afterbegin", img);
       youtube.insertAdjacentElement("afterbegin", block);
 
