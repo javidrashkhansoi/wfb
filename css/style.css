@@ -1014,10 +1014,6 @@ dialog[open] {
   font-size: 12px;
 }
 
-.news-card__address {
-  color: rgba(0, 0, 0, 0.8);
-}
-
 .news-card__time {
   color: #0b2b80;
 }
@@ -1061,6 +1057,66 @@ dialog[open] {
   --color: #29c5ee;
 }
 
+.media-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 40px;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+}
+
+.media-buttons {
+  display: flex;
+  align-items: center;
+  -webkit-column-gap: 79px;
+  -moz-column-gap: 79px;
+  column-gap: 79px;
+}
+
+.media-panels__panel:not(.active) {
+  display: none;
+}
+
+.media-panels__photos {
+  -webkit-margin-after: 160px;
+  margin-block-end: 160px;
+}
+
+.media-panels__videos {
+  margin-inline: auto;
+  -webkit-margin-after: 160px;
+  margin-block-end: 160px;
+}
+
+.media-panels__photo-gallery {
+  -webkit-margin-after: 76px;
+  margin-block-end: 76px;
+}
+
+.media-panels__button {
+  display: block;
+  inline-size: -webkit-fit-content;
+  inline-size: -moz-fit-content;
+  inline-size: fit-content;
+  margin-inline: auto;
+}
+
+.media-panels__button:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.media-panels__button svg {
+  stroke: #001a72;
+  -webkit-transform: rotate(90deg);
+  transform: rotate(90deg);
+  transition-property: stroke;
+  transition-duration: 0.3s;
+}
+
 .media-photo-card {
   display: flex;
   flex-direction: column;
@@ -1077,7 +1133,7 @@ dialog[open] {
   aspect-ratio: 1/1;
   -webkit-margin-after: 32px;
   margin-block-end: 32px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 5px 7px 20 0 rgba(0, 0, 0, 0.1), 22px 29px 36px 0 rgba(0, 0, 0, 0.09), 49px 64px 48px 0 rgba(0, 0, 0, 0.05), 87px 114px 57px 0 rgba(0, 0, 0, 0.01), 136px 178px 63px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 5px 7px 20px 0 rgba(0, 0, 0, 0.1), 22px 29px 36px 0 rgba(0, 0, 0, 0.09), 49px 64px 48px 0 rgba(0, 0, 0, 0.05), 87px 114px 57px 0 rgba(0, 0, 0, 0.01), 136px 178px 63px 0 rgba(0, 0, 0, 0);
   -webkit-padding-after: 42px;
   padding-block-end: 42px;
   padding-inline: 23px;
@@ -1140,7 +1196,6 @@ dialog[open] {
   margin-block-end: 24px;
   font-weight: 700;
   line-height: 1.2;
-  font-size: 18px;
 }
 
 .media-photo-card__title a {
@@ -1157,15 +1212,11 @@ dialog[open] {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  -webkit-column-gap: 20;
-  -moz-column-gap: 20;
-  column-gap: 20;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
   line-height: 1.7;
   font-size: 16px;
-}
-
-.media-photo-card__date {
-  color: rgba(0, 0, 0, 0.8);
 }
 
 .media-photo-card__link {
@@ -1187,7 +1238,6 @@ dialog[open] {
   color: #fff;
   -webkit-margin-after: 14px;
   margin-block-end: 14px;
-  font-size: 18px;
 }
 
 .media-photo-address__place {
@@ -1206,7 +1256,7 @@ dialog[open] {
   aspect-ratio: 624/368;
   -webkit-margin-after: 32px;
   margin-block-end: 32px;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 5px 7px 20 0 rgba(0, 0, 0, 0.1), 22px 29px 36px 0 rgba(0, 0, 0, 0.09), 49px 64px 48px 0 rgba(0, 0, 0, 0.05), 87px 114px 57px 0 rgba(0, 0, 0, 0.01), 136px 178px 63px 0 rgba(0, 0, 0, 0);
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 5px 7px 20px 0 rgba(0, 0, 0, 0.1), 22px 29px 36px 0 rgba(0, 0, 0, 0.09), 49px 64px 48px 0 rgba(0, 0, 0, 0.05), 87px 114px 57px 0 rgba(0, 0, 0, 0.01), 136px 178px 63px 0 rgba(0, 0, 0, 0);
 }
 
 .media-video-card__title {
@@ -1215,7 +1265,6 @@ dialog[open] {
   margin-block-end: 13px;
   font-weight: 700;
   line-height: 1.2;
-  font-size: 18px;
 }
 
 .media-video-card__title a {
@@ -1239,15 +1288,11 @@ dialog[open] {
   display: flex;
   justify-content: space-between;
   align-items: end;
-  -webkit-column-gap: 20;
-  -moz-column-gap: 20;
-  column-gap: 20;
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
   line-height: 1.7;
   font-size: 16px;
-}
-
-.media-video-card__time {
-  color: rgba(0, 0, 0, 0.8);
 }
 
 .media-video-card__link {
@@ -1347,6 +1392,213 @@ dialog[open] {
 
 .pagination__link--dots svg {
   fill: rgba(0, 0, 0, 0.7);
+}
+
+.federation-panels__item:not(.active) {
+  display: none;
+}
+
+.federation-panel__item:not(:last-child) {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.federation-buttons {
+  --line-width: 85px;
+  display: flex;
+  align-items: center;
+  padding-block: 15px;
+  padding-inline: 15px;
+  margin-inline: -15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-column-gap: 69px;
+  -moz-column-gap: 69px;
+  column-gap: 69px;
+}
+
+.federation-buttons__button {
+  white-space: nowrap;
+}
+
+.federation-card {
+  display: grid;
+  align-items: center;
+  gap: 64px;
+}
+
+.federation-card--big {
+  gap: 95px;
+}
+
+.federation-card__image {
+  align-self: start;
+  aspect-ratio: 320.7/263.73;
+}
+
+.federation-card--big .federation-card__image {
+  aspect-ratio: 493/405.43;
+}
+
+.federation-card__content > *:last-child {
+  -webkit-margin-after: 0;
+  margin-block-end: 0;
+}
+
+.federation-card__title {
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0b2b80;
+  -webkit-margin-after: 24px;
+  margin-block-end: 24px;
+  font-size: 32px;
+}
+
+.federation-card__title a {
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.federation-card__title a:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.federation-card__job {
+  line-height: 1.7;
+  -webkit-margin-after: 38px;
+  margin-block-end: 38px;
+}
+
+.federation-card--big .federation-card__job {
+  color: rgba(11, 43, 128, 0.8);
+}
+
+.wrestlers-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: -15px;
+}
+
+.wrestlers-grid__item {
+  padding: 15px;
+  flex: 0 1 16.6666666667%;
+}
+
+.wrestler-mini-card {
+  position: relative;
+  isolation: isolate;
+  min-inline-size: 220px;
+  block-size: 100%;
+  padding: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.wrestler-mini-card::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: -1;
+  aspect-ratio: 225/99;
+  background: linear-gradient(180deg, rgba(45, 119, 194, 0) 0%, #2d77c2 100%);
+}
+
+.wrestler-mini-card__link::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.wrestler-mini-card__link:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.wrestler-mini-card__top {
+  position: relative;
+  -webkit-margin-after: 30px;
+  margin-block-end: 30px;
+}
+
+.wrestler-mini-card__image {
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.wrestler-mini-card__icon {
+  position: absolute;
+  inset-block-end: 5px;
+  inset-inline-end: 5px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  inline-size: 55px;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1;
+  letter-spacing: -0.678px;
+  color: #0b2b80;
+  background-color: var(--background-color, #fff);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+.wrestler-mini-card__icon svg {
+  fill: #fff;
+}
+
+.wrestler-mini-card__icon--blue {
+  --background-color: #1b529e;
+}
+
+.wrestler-mini-card__icon--red {
+  --background-color: #e32125;
+}
+
+.wrestler-mini-card__title {
+  text-align: center;
+  letter-spacing: -0.78px;
+  color: #fff;
+  font-size: 26px;
+}
+
+.wrestler-mini-card__background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+
+.wrestler-mini-card__background img {
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
+}
+
+.schools-links {
+  --line-width: 85px;
+  display: flex;
+  align-items: center;
+  margin-inline: -15px;
+  padding: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-column-gap: 95px;
+  -moz-column-gap: 95px;
+  column-gap: 95px;
+}
+
+.schools-links__link {
+  white-space: nowrap;
 }
 
 body {
@@ -1958,7 +2210,6 @@ body::after {
   min-inline-size: 225px;
   min-block-size: 55px;
   padding-inline: 20px;
-  font-size: 18px;
   letter-spacing: -0.81px;
 }
 
@@ -2021,7 +2272,6 @@ body::after {
 .hero-main-news__info {
   line-height: 1.2;
   color: rgba(255, 255, 255, 0.8);
-  font-size: 18px;
 }
 
 .hero-main-news__image {
@@ -2053,7 +2303,6 @@ body::after {
   color: rgba(255, 255, 255, 0.8);
   transition-property: color;
   transition-duration: 0.3s;
-  font-size: 18px;
   letter-spacing: -0.81px;
 }
 
@@ -2702,7 +2951,6 @@ body::after {
   background-color: var(--background-color, #0c2c81);
   min-block-size: 38px;
   padding-inline: 23px;
-  font-size: 18px;
 }
 
 .calendar-card__status--completion {
@@ -2725,8 +2973,6 @@ body::after {
   -webkit-margin-after: 16px;
   margin-block-end: 16px;
   line-height: 1.7;
-  color: rgba(0, 0, 0, 0.8);
-  font-size: 18px;
 }
 
 .calendar-card__title {
@@ -2735,7 +2981,6 @@ body::after {
   color: #143385;
   transition-property: color;
   transition-duration: 0.3s;
-  font-size: 18px;
 }
 
 .calendar-card__title:focus-visible {
@@ -2836,12 +3081,10 @@ body::after {
   -webkit-column-gap: 40px;
   -moz-column-gap: 40px;
   column-gap: 40px;
-  font-size: 18px;
 }
 
 .calendar-header__address {
   line-height: 1.7;
-  color: rgba(0, 0, 0, 0.8);
 }
 
 .calendar-header__date {
@@ -3224,6 +3467,411 @@ body::after {
   aspect-ratio: 1001/468;
 }
 
+.federation__title {
+  -webkit-margin-after: 59px;
+  margin-block-end: 59px;
+}
+
+.federation-tabs__buttons {
+  -webkit-margin-after: 67px;
+  margin-block-end: 67px;
+}
+
+.federation-inner {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.federation-inner__header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  row-gap: 25px;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.hall-of-fame {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.hall-of-fame__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.hall-of-fame-inner {
+  -webkit-padding-before: 69px;
+  padding-block-start: 69px;
+  -webkit-padding-after: 149px;
+  padding-block-end: 149px;
+}
+
+.hall-of-fame-inner__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.wrestler-big-card {
+  display: grid;
+  max-inline-size: 1386px;
+  gap: 134px;
+}
+
+.wrestler-big-card__image {
+  align-self: start;
+  aspect-ratio: 459/614;
+  border-radius: 40px;
+  -webkit-border-after: 11px solid var(--border-color, #3181d3);
+  border-block-end: 11px solid var(--border-color, #3181d3);
+}
+
+.wrestler-big-card__image--blue {
+  --border-color: #3181d3;
+}
+
+.wrestler-big-card__image--red {
+  --border-color: #e32125;
+}
+
+.wrestler-big-card__title {
+  -webkit-margin-after: 17px;
+  margin-block-end: 17px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0b2b80;
+  font-size: 32px;
+}
+
+.wrestler-big-card__type {
+  -webkit-margin-after: 18px;
+  margin-block-end: 18px;
+}
+
+.wrestler-big-card__text {
+  text-align: justify;
+}
+
+.wrestling-type {
+  display: flex;
+  align-items: center;
+  -webkit-column-gap: 13px;
+  -moz-column-gap: 13px;
+  column-gap: 13px;
+  line-height: 1.7;
+  color: #0b2b80;
+}
+
+.wrestling-type--blue {
+  --background-color: #1b529e;
+}
+
+.wrestling-type--red {
+  --background-color: #e32125;
+}
+
+.wrestling-type__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  inline-size: 34px;
+  aspect-ratio: 1/1;
+  background-color: var(--background-color, #1b529e);
+  border-radius: 50%;
+}
+
+.wrestling-type__icon svg {
+  fill: #fff;
+}
+
+.national-teams {
+  -webkit-padding-before: 69px;
+  padding-block-start: 69px;
+  -webkit-padding-after: 80px;
+  padding-block-end: 80px;
+}
+
+.national-teams__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.teams__item:not(:last-child) {
+  -webkit-margin-after: 160px;
+  margin-block-end: 160px;
+}
+
+.team__title {
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: #0b2b80;
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+  font-size: 24px;
+}
+
+.coachs {
+  -webkit-padding-before: 80px;
+  padding-block-start: 80px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.coachs__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.national-team-inner {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.national-team-inner__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.team-member {
+  display: grid;
+  align-items: center;
+  max-inline-size: 1341px;
+  gap: 88px;
+}
+
+.team-member__image {
+  align-self: start;
+  aspect-ratio: 458/603.47;
+  border-radius: 40px;
+}
+
+.team-member__image::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline: 0;
+  z-index: 1;
+  aspect-ratio: 459/166;
+  background-image: linear-gradient(180deg, rgba(50, 130, 211, 0) 0%, #3181d3 100%);
+}
+
+.team-member__title {
+  -webkit-margin-after: 24px;
+  margin-block-end: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #143385;
+  font-size: 32px;
+}
+
+.team-member__info {
+  -webkit-margin-after: 32px;
+  margin-block-end: 32px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: rgba(20, 51, 133, 0.8);
+}
+
+.team-member__text {
+  text-align: justify;
+}
+
+.sports-schools {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.sports-schools__title {
+  -webkit-margin-after: 59px;
+  margin-block-end: 59px;
+}
+
+.sports-schools__links {
+  -webkit-margin-after: 67px;
+  margin-block-end: 67px;
+}
+
+.sports-schools__inner {
+  -webkit-margin-after: 160px;
+  margin-block-end: 160px;
+}
+
+.sports-schools__item:not(:last-child) {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.school-card {
+  display: grid;
+  align-items: center;
+  gap: 64px;
+}
+
+.school-card__images {
+  position: relative;
+  align-self: start;
+}
+
+.school-card__image {
+  aspect-ratio: 456/375;
+}
+
+.school-card__icons {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  inset-block-start: 41px;
+  inset-inline-start: 41px;
+}
+
+.school-card__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  inline-size: 55px;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  background-color: var(--background-color, #e32125);
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.school-card__icon svg {
+  fill: #fff;
+}
+
+.school-card__icon--red {
+  --background-color: #e32125;
+}
+
+.school-card__icon--blue {
+  --background-color: #1b529e;
+}
+
+.school-card__content {
+  max-inline-size: 871px;
+  -webkit-margin-after: 87px;
+  margin-block-end: 87px;
+}
+
+.school-card__title {
+  font-weight: 700;
+  line-height: 1.2;
+  color: #000e68;
+  -webkit-margin-after: 32px;
+  margin-block-end: 32px;
+  font-size: 24px;
+}
+
+.school-card__title a {
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.school-card__title a:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.school-card__text {
+  line-height: 1.7;
+}
+
+.school-card__link {
+  display: block;
+  inline-size: -webkit-fit-content;
+  inline-size: -moz-fit-content;
+  inline-size: fit-content;
+  -webkit-margin-start: auto;
+  margin-inline-start: auto;
+  line-height: 1.2;
+  color: #000e68;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.school-card__link:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.sports-schools-inner {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.sports-schools-inner__title {
+  -webkit-margin-after: 59px;
+  margin-block-end: 59px;
+}
+
+.sports-schools-inner__links {
+  -webkit-margin-after: 67px;
+  margin-block-end: 67px;
+}
+
+.school-info {
+  display: grid;
+  align-items: center;
+  gap: 64px;
+}
+
+.school-info__image {
+  align-self: start;
+  aspect-ratio: 612/400.52;
+}
+
+.school-info__title {
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0b2b80;
+  -webkit-margin-after: 33px;
+  margin-block-end: 33px;
+  font-size: 24px;
+}
+
+.school-info__text {
+  line-height: 1.7;
+  -webkit-margin-after: 25px;
+  margin-block-end: 25px;
+}
+
+.school-info__link {
+  font-weight: 700;
+  line-height: 1.7;
+  text-decoration: underline;
+  color: #0b2b80;
+  word-break: break-all;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.school-info__link:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
 .media {
   -webkit-padding-before: 68px;
   padding-block-start: 68px;
@@ -3232,39 +3880,8 @@ body::after {
 }
 
 .media__header {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  row-gap: 40px;
-  -webkit-column-gap: 20px;
-  -moz-column-gap: 20px;
-  column-gap: 20px;
   -webkit-margin-after: 68px;
   margin-block-end: 68px;
-}
-
-.media__buttons {
-  display: flex;
-  align-items: center;
-  -webkit-column-gap: 79px;
-  -moz-column-gap: 79px;
-  column-gap: 79px;
-}
-
-.media__panel:not(.active) {
-  display: none;
-}
-
-.media__photos {
-  -webkit-margin-after: 160px;
-  margin-block-end: 160px;
-}
-
-.media__videos {
-  margin-inline: auto;
-  -webkit-margin-after: 160px;
-  margin-block-end: 160px;
 }
 
 .media-photos {
@@ -3276,6 +3893,227 @@ body::after {
   display: grid;
   max-inline-size: 1338px;
   gap: 88px;
+}
+
+.media-inner__header {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.media-gallery__header {
+  -webkit-margin-after: 64px;
+  margin-block-end: 64px;
+}
+
+.media-gallery__title {
+  -webkit-margin-after: 32px;
+  margin-block-end: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #143385;
+  font-size: 24px;
+}
+
+.media-gallery__info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 10px;
+  -webkit-column-gap: 34px;
+  -moz-column-gap: 34px;
+  column-gap: 34px;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.media-gallery-photos {
+  display: grid;
+  gap: 32px;
+}
+
+.media-gallery-photos__image {
+  display: block;
+  aspect-ratio: 335/200;
+}
+
+.media-gallery-video {
+  aspect-ratio: 16/9;
+}
+
+.history {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.history__title {
+  -webkit-margin-after: 70px;
+  margin-block-end: 70px;
+}
+
+.history-card {
+  display: grid;
+  gap: 137px;
+}
+
+.history-card__title {
+  -webkit-margin-after: 32px;
+  margin-block-end: 32px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #143385;
+  font-size: 24px;
+}
+
+.history-card__text p:not(:last-child) {
+  -webkit-margin-after: 1.5em;
+  margin-block-end: 1.5em;
+}
+
+.contacts {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 80px;
+  padding-block-end: 80px;
+}
+
+.contacts__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.contacts__info {
+  max-inline-size: 500px;
+  -webkit-margin-after: 40px;
+  margin-block-end: 40px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: rgba(20, 51, 133, 0.8);
+  font-size: 24px;
+}
+
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 15px;
+  -webkit-column-gap: 88px;
+  -moz-column-gap: 88px;
+  column-gap: 88px;
+}
+
+.address__item {
+  display: flex;
+  align-items: center;
+  -webkit-column-gap: 24px;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+}
+
+.address__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #fefeff;
+  box-shadow: 0 1.8518518209px 3.1481480598px 0 rgba(41, 72, 152, 0.01), 0 8.1481485367px 6.5185184479px 0 rgba(41, 72, 152, 0.02), 0 20px 13px 0 rgba(41, 72, 152, 0.03), 0 38.5185203552px 25.4814815521px 0 rgba(41, 72, 152, 0.03), 0 64.8148117065px 46.851852417px 0 rgba(41, 72, 152, 0.04), 0 100px 80px 0 rgba(41, 72, 152, 0.05);
+  inline-size: 48px;
+}
+
+.address__icon svg {
+  fill: #143385;
+  stroke: #143385;
+}
+
+.address__text {
+  color: #000;
+  line-height: 1.2;
+  font-size: 16px;
+}
+
+.address__text[href] {
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.address__text[href]:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.services {
+  -webkit-padding-before: 80px;
+  padding-block-start: 80px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.services__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.services__text p:not(:last-child) {
+  -webkit-margin-after: 1.5em;
+  margin-block-end: 1.5em;
+}
+
+.nla {
+  -webkit-padding-before: 68px;
+  padding-block-start: 68px;
+  -webkit-padding-after: 160px;
+  padding-block-end: 160px;
+}
+
+.nla__title {
+  -webkit-margin-after: 68px;
+  margin-block-end: 68px;
+}
+
+.nla-files__item:not(:last-child) {
+  -webkit-margin-after: 24px;
+  margin-block-end: 24px;
+}
+
+.nla-file {
+  display: flex;
+  align-items: center;
+  -webkit-column-gap: 24px;
+  -moz-column-gap: 24px;
+  column-gap: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  transition-property: color;
+  transition-duration: 0.3s;
+}
+
+.nla-file:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
+}
+
+.nla-file__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 0 0 auto;
+  inline-size: 58px;
+  aspect-ratio: 1/1;
+  padding: 5px;
+  border-radius: 12px;
+  background-color: #fefeff;
+  box-shadow: 0 2.2376544476px 3.8040122986px 0 rgba(41, 72, 152, 0.01), 0 9.8456802368px 7.8765435219px 0 rgba(41, 72, 152, 0.02), 0 24.1666679382px 15.7083339691px 0 rgba(41, 72, 152, 0.03), 0 46.5432128906px 30.7901248932px 0 rgba(41, 72, 152, 0.03), 0 78.3179016113px 56.6126556396px 0 rgba(41, 72, 152, 0.04), 0 120.8333358765px 96.6666717529px 0 rgba(41, 72, 152, 0.05);
+}
+
+.nla-file__icon svg {
+  stroke: #143385;
 }
 
 @media (min-width: 320px) {
@@ -3310,6 +4148,10 @@ body::after {
 
   .main-media-videos__inner {
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+
+  .media-gallery-photos {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 
@@ -3372,6 +4214,16 @@ body::after {
   }
 }
 
+@media (min-width: 601px) {
+  .federation-card {
+    grid-template-columns: 0.6388059701fr 1.3611940299fr;
+  }
+
+  .federation-card--big {
+    grid-template-columns: 0.6919298246fr 1.3080701754fr;
+  }
+}
+
 @media (min-width: 640px) {
   .choices__list--dropdown .choices__item--selectable,
   .choices__list[aria-expanded] .choices__item--selectable {
@@ -3426,6 +4278,10 @@ body::after {
 
   .tab-button.active::after {
     inline-size: var(--line-width, 60px);
+  }
+
+  .federation-buttons {
+    justify-content: end;
   }
 
   .footer__inner {
@@ -3506,6 +4362,26 @@ body::after {
 
   .calendar-media {
     grid-template-columns: 0.7404426559fr 1.2555331992fr;
+  }
+
+  .wrestler-big-card {
+    grid-template-columns: 0.731629393fr 1.268370607fr;
+  }
+
+  .team-member {
+    grid-template-columns: 0.73264166fr 1.26735834fr;
+  }
+
+  .school-card {
+    grid-template-columns: 0.6263736264fr 1.3736263736fr;
+  }
+
+  .school-info {
+    grid-template-columns: 0.8406593407fr 1.1593406593fr;
+  }
+
+  .history-card {
+    grid-template-columns: 1.0513376717fr 0.9486623283fr;
   }
 }
 
@@ -3631,6 +4507,12 @@ body::after {
   }
 }
 
+@media (min-width: 1920px) {
+  .schools-links {
+    justify-content: center;
+  }
+}
+
 @media (max-width: 1560px) {
   .title-h2 {
     font-size: calc(24px + 16 * ((100vw - 320px) / 1240));
@@ -3705,6 +4587,21 @@ body::after {
     font-size: calc(10px + 2 * ((100vw - 320px) / 1240));
   }
 
+  .media-panels__photos {
+    -webkit-margin-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .media-panels__videos {
+    -webkit-margin-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .media-panels__photo-gallery {
+    -webkit-margin-after: calc(32px + 44 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(32px + 44 * ((100vw - 320px) / 1240));
+  }
+
   .media-photo-card__top {
     -webkit-padding-after: calc(32px + 10 * ((100vw - 320px) / 1240));
     padding-block-end: calc(32px + 10 * ((100vw - 320px) / 1240));
@@ -3732,10 +4629,6 @@ body::after {
     block-size: calc(17px + 6 * ((100vw - 320px) / 1240));
   }
 
-  .media-photo-card__title {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
   .media-photo-card__bottom {
     font-size: calc(10px + 6 * ((100vw - 320px) / 1240));
   }
@@ -3745,16 +4638,8 @@ body::after {
     margin-block-end: calc(12px + 2 * ((100vw - 320px) / 1240));
   }
 
-  .media-photo-address__city {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
   .media-photo-address__place {
     font-size: calc(12px + 4 * ((100vw - 320px) / 1240));
-  }
-
-  .media-video-card__title {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
   }
 
   .media-video-card__text {
@@ -3779,6 +4664,49 @@ body::after {
 
   .pagination__link {
     font-size: calc(10px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-panel__item:not(:last-child) {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-buttons {
+    -webkit-column-gap: calc(32px + 37 * ((100vw - 320px) / 1240));
+    -moz-column-gap: calc(32px + 37 * ((100vw - 320px) / 1240));
+    column-gap: calc(32px + 37 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-card {
+    gap: calc(32px + 32 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-card--big {
+    gap: calc(32px + 63 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-card__title {
+    -webkit-margin-after: calc(10px + 14 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(10px + 14 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-card__title {
+    font-size: calc(18px + 14 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-card__job {
+    -webkit-margin-after: calc(15px + 23 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(15px + 23 * ((100vw - 320px) / 1240));
+  }
+
+  .wrestler-mini-card__title {
+    font-size: calc(20px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .schools-links {
+    -webkit-column-gap: calc(32px + 63 * ((100vw - 320px) / 1240));
+    -moz-column-gap: calc(32px + 63 * ((100vw - 320px) / 1240));
+    column-gap: calc(32px + 63 * ((100vw - 320px) / 1240));
   }
 
   body {
@@ -3922,15 +4850,7 @@ body::after {
   }
 
   .hero__button {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
-  .hero__button {
     letter-spacing: calc(-0.54px + -0.27 * ((100vw - 320px) / 1240));
-  }
-
-  .hero-main-news__info {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
   }
 
   .events {
@@ -3946,10 +4866,6 @@ body::after {
   .events__header {
     -webkit-margin-after: calc(40px + 50 * ((100vw - 320px) / 1240));
     margin-block-end: calc(40px + 50 * ((100vw - 320px) / 1240));
-  }
-
-  .events__link {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
   }
 
   .events__link {
@@ -4193,18 +5109,6 @@ body::after {
     padding-inline: calc(15px + 8 * ((100vw - 320px) / 1240));
   }
 
-  .calendar-card__status {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
-  .calendar-card__address {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
-  .calendar-card__title {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
   .calendar-inner {
     -webkit-padding-before: calc(64px + 24 * ((100vw - 320px) / 1240));
     padding-block-start: calc(64px + 24 * ((100vw - 320px) / 1240));
@@ -4253,10 +5157,6 @@ body::after {
 
   .calendar-header__title {
     font-size: calc(18px + 14 * ((100vw - 320px) / 1240));
-  }
-
-  .calendar-header__row {
-    font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
   }
 
   .calendar-tabs__buttons {
@@ -4343,6 +5243,230 @@ body::after {
     margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
   }
 
+  .federation__title {
+    -webkit-margin-after: calc(25px + 34 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(25px + 34 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-tabs__buttons {
+    -webkit-margin-after: calc(25px + 42 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(25px + 42 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-inner {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-inner {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .federation-inner__header {
+    -webkit-margin-after: calc(64px + 4 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .hall-of-fame {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .hall-of-fame {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .hall-of-fame__title {
+    -webkit-margin-after: calc(64px + 4 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .hall-of-fame-inner {
+    -webkit-padding-before: calc(64px + 5 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 5 * ((100vw - 320px) / 1240));
+  }
+
+  .hall-of-fame-inner {
+    -webkit-padding-after: calc(64px + 85 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 85 * ((100vw - 320px) / 1240));
+  }
+
+  .hall-of-fame-inner__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .wrestler-big-card {
+    gap: calc(32px + 102 * ((100vw - 320px) / 1240));
+  }
+
+  .wrestler-big-card__title {
+    font-size: calc(18px + 14 * ((100vw - 320px) / 1240));
+  }
+
+  .national-teams {
+    -webkit-padding-before: calc(64px + 5 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 5 * ((100vw - 320px) / 1240));
+  }
+
+  .national-teams {
+    -webkit-padding-after: calc(32px + 48 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(32px + 48 * ((100vw - 320px) / 1240));
+  }
+
+  .national-teams__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .teams__item:not(:last-child) {
+    -webkit-margin-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .team__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .team__title {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .coachs {
+    -webkit-padding-before: calc(32px + 48 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(32px + 48 * ((100vw - 320px) / 1240));
+  }
+
+  .coachs {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .coachs__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .national-team-inner {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .national-team-inner {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .national-team-inner__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .team-member {
+    gap: calc(32px + 56 * ((100vw - 320px) / 1240));
+  }
+
+  .team-member__title {
+    font-size: calc(18px + 14 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools__title {
+    -webkit-margin-after: calc(25px + 34 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(25px + 34 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools__links {
+    -webkit-margin-after: calc(25px + 42 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(25px + 42 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools__inner {
+    -webkit-margin-after: calc(40px + 120 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 120 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools__item:not(:last-child) {
+    -webkit-margin-after: calc(32px + 36 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(32px + 36 * ((100vw - 320px) / 1240));
+  }
+
+  .school-card {
+    gap: calc(32px + 32 * ((100vw - 320px) / 1240));
+  }
+
+  .school-card__icons {
+    inset-block-start: calc(20px + 21 * ((100vw - 320px) / 1240));
+  }
+
+  .school-card__icons {
+    inset-inline-start: calc(20px + 21 * ((100vw - 320px) / 1240));
+  }
+
+  .school-card__content {
+    -webkit-margin-after: calc(10px + 77 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(10px + 77 * ((100vw - 320px) / 1240));
+  }
+
+  .school-card__title {
+    -webkit-margin-after: calc(10px + 22 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(10px + 22 * ((100vw - 320px) / 1240));
+  }
+
+  .school-card__title {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools-inner {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools-inner {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools-inner__title {
+    -webkit-margin-after: calc(25px + 34 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(25px + 34 * ((100vw - 320px) / 1240));
+  }
+
+  .sports-schools-inner__links {
+    -webkit-margin-after: calc(25px + 42 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(25px + 42 * ((100vw - 320px) / 1240));
+  }
+
+  .school-info {
+    gap: calc(32px + 32 * ((100vw - 320px) / 1240));
+  }
+
+  .school-info__title {
+    -webkit-margin-after: calc(10px + 23 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(10px + 23 * ((100vw - 320px) / 1240));
+  }
+
+  .school-info__title {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .school-info__text {
+    -webkit-margin-after: calc(10px + 15 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(10px + 15 * ((100vw - 320px) / 1240));
+  }
+
   .media {
     -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
     padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
@@ -4358,22 +5482,118 @@ body::after {
     margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
   }
 
-  .media__photos {
-    -webkit-margin-after: calc(64px + 96 * ((100vw - 320px) / 1240));
-    margin-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
-  }
-
-  .media__videos {
-    -webkit-margin-after: calc(64px + 96 * ((100vw - 320px) / 1240));
-    margin-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
-  }
-
   .media-photos {
     gap: calc(40px + 36 * ((100vw - 320px) / 1240));
   }
 
   .media-videos {
     gap: calc(40px + 48 * ((100vw - 320px) / 1240));
+  }
+
+  .media-inner__header {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .media-gallery__header {
+    -webkit-margin-after: calc(40px + 24 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 24 * ((100vw - 320px) / 1240));
+  }
+
+  .media-gallery__title {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .history {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .history {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .history__title {
+    -webkit-margin-after: calc(40px + 30 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 30 * ((100vw - 320px) / 1240));
+  }
+
+  .history-card {
+    gap: calc(32px + 105 * ((100vw - 320px) / 1240));
+  }
+
+  .history-card__title {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .contacts {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .contacts {
+    -webkit-padding-after: calc(32px + 48 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(32px + 48 * ((100vw - 320px) / 1240));
+  }
+
+  .contacts__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .contacts__info {
+    font-size: calc(18px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .address {
+    -webkit-column-gap: calc(20px + 68 * ((100vw - 320px) / 1240));
+    -moz-column-gap: calc(20px + 68 * ((100vw - 320px) / 1240));
+    column-gap: calc(20px + 68 * ((100vw - 320px) / 1240));
+  }
+
+  .address__item {
+    -webkit-column-gap: calc(10px + 14 * ((100vw - 320px) / 1240));
+    -moz-column-gap: calc(10px + 14 * ((100vw - 320px) / 1240));
+    column-gap: calc(10px + 14 * ((100vw - 320px) / 1240));
+  }
+
+  .address__icon {
+    inline-size: calc(30px + 18 * ((100vw - 320px) / 1240));
+  }
+
+  .address__text {
+    font-size: calc(10px + 6 * ((100vw - 320px) / 1240));
+  }
+
+  .services {
+    -webkit-padding-before: calc(32px + 48 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(32px + 48 * ((100vw - 320px) / 1240));
+  }
+
+  .services {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .services__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
+  }
+
+  .nla {
+    -webkit-padding-before: calc(64px + 4 * ((100vw - 320px) / 1240));
+    padding-block-start: calc(64px + 4 * ((100vw - 320px) / 1240));
+  }
+
+  .nla {
+    -webkit-padding-after: calc(64px + 96 * ((100vw - 320px) / 1240));
+    padding-block-end: calc(64px + 96 * ((100vw - 320px) / 1240));
+  }
+
+  .nla__title {
+    -webkit-margin-after: calc(40px + 28 * ((100vw - 320px) / 1240));
+    margin-block-end: calc(40px + 28 * ((100vw - 320px) / 1240));
   }
 }
 
@@ -4450,6 +5670,10 @@ body::after {
     display: none;
   }
 
+  .media-header__title {
+    flex: 0 1 100%;
+  }
+
   .footer__text {
     grid-column: 1/-1;
   }
@@ -4500,8 +5724,12 @@ body::after {
     justify-content: space-between;
   }
 
-  .media__title {
-    flex: 0 1 100%;
+  .history-card__content {
+    order: 1;
+  }
+
+  .history-card__image {
+    aspect-ratio: 658/690;
   }
 }
 
@@ -4599,6 +5827,14 @@ body::after {
     outline: none;
   }
 
+  .media-panels__button:hover {
+    outline: none;
+  }
+
+  .media-panels__button:hover svg {
+    stroke: rgba(0, 26, 114, 0.8);
+  }
+
   .media-photo-card__icon:hover {
     background-color: #0b2b80;
     outline: none;
@@ -4645,6 +5881,20 @@ body::after {
   .pagination__link[href]:hover svg {
     fill: #fff;
     stroke: #fff;
+  }
+
+  .federation-card__title a:hover {
+    color: rgba(11, 43, 128, 0.8);
+    outline: none;
+  }
+
+  .wrestler-mini-card__link:hover {
+    outline: none;
+  }
+
+  .wrestler-mini-card__link:hover .wrestler-mini-card__icon,
+  .wrestler-mini-card__link:hover .wrestler-mini-card__background {
+    opacity: 0.5;
   }
 
   [href].header-sublist__link:hover,
@@ -4800,6 +6050,31 @@ body::after {
   .news-article__arrow:hover svg {
     stroke: #0b2b80;
   }
+
+  .school-card__title a:hover {
+    color: rgba(11, 43, 128, 0.8);
+    outline: none;
+  }
+
+  .school-card__link:hover {
+    color: rgba(0, 14, 104, 0.8);
+    outline: none;
+  }
+
+  .school-info__link:hover {
+    color: rgba(11, 43, 128, 0.8);
+    outline: none;
+  }
+
+  .address__text[href]:hover {
+    color: #143385;
+    outline: none;
+  }
+
+  .nla-file:hover {
+    color: #143385;
+    outline: none;
+  }
 }
 
 @media (hover: none) {
@@ -4814,6 +6089,11 @@ body::after {
   }
 
   .tab-button:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .media-panels__button:active {
     outline: none;
     opacity: 0.5;
   }
@@ -4849,6 +6129,16 @@ body::after {
   }
 
   .pagination__link[href]:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .federation-card__title a:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .wrestler-mini-card__link:active {
     outline: none;
     opacity: 0.5;
   }
@@ -4956,6 +6246,31 @@ body::after {
   }
 
   .news-article__arrow:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .school-card__title a:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .school-card__link:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .school-info__link:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .address__text[href]:active {
+    outline: none;
+    opacity: 0.5;
+  }
+
+  .nla-file:active {
     outline: none;
     opacity: 0.5;
   }
