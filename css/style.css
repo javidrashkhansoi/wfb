@@ -2150,6 +2150,9 @@ body::after {
 .footer-background__image {
   -o-object-position: 50% 100%;
   object-position: 50% 100%;
+  -webkit-filter: blur(45px);
+  filter: blur(45px);
+  opacity: 0.3;
 }
 
 .footer-decor {
@@ -2214,6 +2217,11 @@ body::after {
   z-index: -1;
   aspect-ratio: 320/166;
   background-color: #0b2b80;
+}
+
+.hero__image img {
+  mix-blend-mode: soft-light;
+  opacity: 0.5;
 }
 
 .hero-main-news {
@@ -2351,7 +2359,13 @@ body::after {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background-color: #0b2b80;
+  background-color: #080a23;
+}
+
+.events__background img {
+  opacity: 0.2;
+  -webkit-filter: blur(25px);
+  filter: blur(25px);
 }
 
 .events-slider {
@@ -2559,6 +2573,12 @@ body::after {
   position: absolute;
   inset: 0;
   z-index: -1;
+}
+
+.main-media__background img {
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+  opacity: 0.2;
 }
 
 .main-media-photos__header {
@@ -4236,6 +4256,13 @@ body::after {
   }
 }
 
+@media (min-width: 768px) {
+  .footer-background__image {
+    -webkit-filter: blur(100px);
+    filter: blur(100px);
+  }
+}
+
 @media (min-width: 769px) {
   .main-grid__inner {
     grid-template-columns: 1.4272363151fr 0.5594125501fr;
@@ -4298,6 +4325,11 @@ body::after {
 
   .hero__image {
     aspect-ratio: 1920/601;
+  }
+
+  .events__background img {
+    -webkit-filter: blur(10px);
+    filter: blur(10px);
   }
 
   .events-grid {
