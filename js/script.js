@@ -7825,7 +7825,7 @@ class Burger {
 
 
 const burger = new Burger({
-  breakpoint: 1500,
+  breakpoint: 1250,
 });
 
 // EXTERNAL MODULE: ./src/js/modules/spoilers.js

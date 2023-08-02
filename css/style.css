@@ -1671,12 +1671,12 @@ body::after {
   display: grid;
   grid-template-columns: auto 1fr 31px;
   align-items: center;
+  -webkit-column-gap: 40px;
+  -moz-column-gap: 40px;
+  column-gap: 40px;
   padding-block: 7px;
   transition-property: min-block-size;
   transition-duration: 0.3s;
-  -webkit-column-gap: 70px;
-  -moz-column-gap: 70px;
-  column-gap: 70px;
   min-block-size: 147px;
 }
 
@@ -1934,14 +1934,14 @@ body::after {
   transition-duration: 0.3s;
 }
 
-.up:focus-visible {
-  outline: 1px solid;
-  outline-offset: 5px;
-}
-
 .scrolled .up {
   opacity: 0.5;
   visibility: inherit;
+}
+
+.up:focus-visible {
+  outline: 1px solid;
+  outline-offset: 5px;
 }
 
 .up__icon {
@@ -4133,9 +4133,9 @@ body::after {
   }
 
   .header-socials {
-    -webkit-column-gap: 40px;
-    -moz-column-gap: 40px;
-    column-gap: 40px;
+    -webkit-column-gap: 25px;
+    -moz-column-gap: 25px;
+    column-gap: 25px;
   }
 
   .footer-nav__list {
@@ -4438,19 +4438,12 @@ body::after {
   }
 }
 
-@media (min-width: 1441px) {
-  .main-media__inner {
-    grid-template-columns: 1.1333333333fr 0.8666666667fr;
-  }
-
-  .main-media-header {
-    justify-content: end;
-  }
-}
-
-@media (min-width: 1501px) {
+@media (min-width: 1251px) {
   .header__inner {
     grid-template-columns: auto 1fr auto;
+    -webkit-column-gap: 70px;
+    -moz-column-gap: 70px;
+    column-gap: 70px;
   }
 
   .header-nav__list {
@@ -4509,9 +4502,15 @@ body::after {
     background-color: #000c66;
     overflow: auto;
   }
+
+  .header-socials {
+    -webkit-column-gap: 40px;
+    -moz-column-gap: 40px;
+    column-gap: 40px;
+  }
 }
 
-@media (min-width: 1501px) and (hover: hover) {
+@media (min-width: 1251px) and (hover: hover) {
   .header-sublist:hover .header-sublist__title {
     color: #fff;
   }
@@ -4523,6 +4522,16 @@ body::after {
   .header-sublist:hover .header-sublist__inner {
     opacity: 1;
     visibility: inherit;
+  }
+}
+
+@media (min-width: 1441px) {
+  .main-media__inner {
+    grid-template-columns: 1.1333333333fr 0.8666666667fr;
+  }
+
+  .main-media-header {
+    justify-content: end;
   }
 }
 
@@ -4730,12 +4739,6 @@ body::after {
 
   body {
     font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
-  }
-
-  .header__inner {
-    -webkit-column-gap: calc(40px + 30 * ((100vw - 320px) / 1240));
-    -moz-column-gap: calc(40px + 30 * ((100vw - 320px) / 1240));
-    column-gap: calc(40px + 30 * ((100vw - 320px) / 1240));
   }
 
   .header__inner {
@@ -5616,7 +5619,13 @@ body::after {
   }
 }
 
-@media (max-width: 1500px) {
+@media (max-width: 1300px) {
+  .news-card__title--small br {
+    display: none;
+  }
+}
+
+@media (max-width: 1250px) {
   .header-nav {
     position: fixed;
     inset-block-start: var(--header-height);
@@ -5654,12 +5663,6 @@ body::after {
 
   .header-socials {
     justify-content: end;
-  }
-}
-
-@media (max-width: 1300px) {
-  .news-card__title--small br {
-    display: none;
   }
 }
 
@@ -5779,7 +5782,27 @@ body::after {
   }
 }
 
-@media (max-width: 1500px) and (min-width: 501px) {
+@media (min-width: 1251px) and (max-width: 1560px) {
+  .header__inner {
+    -webkit-column-gap: calc(40px + 30 * ((100vw - 1250px) / 310));
+    -moz-column-gap: calc(40px + 30 * ((100vw - 1250px) / 310));
+    column-gap: calc(40px + 30 * ((100vw - 1250px) / 310));
+  }
+
+  .header-nav__list {
+    -webkit-column-gap: calc(20px + 20 * ((100vw - 1250px) / 310));
+    -moz-column-gap: calc(20px + 20 * ((100vw - 1250px) / 310));
+    column-gap: calc(20px + 20 * ((100vw - 1250px) / 310));
+  }
+
+  .header-socials {
+    -webkit-column-gap: calc(25px + 15 * ((100vw - 1250px) / 310));
+    -moz-column-gap: calc(25px + 15 * ((100vw - 1250px) / 310));
+    column-gap: calc(25px + 15 * ((100vw - 1250px) / 310));
+  }
+}
+
+@media (max-width: 1250px) and (min-width: 501px) {
   .header-nav {
     -webkit-transform: translateX(100%);
     transform: translateX(100%);
@@ -5789,22 +5812,6 @@ body::after {
   .burger-active .header-nav {
     -webkit-transform: translateX(0);
     transform: translateX(0);
-  }
-}
-
-@media (min-width: 1501px) and (max-width: 1560px) {
-  .header-nav__list {
-    -webkit-column-gap: calc(20px + 20 * ((100vw - 320px) / 1240));
-    -moz-column-gap: calc(20px + 20 * ((100vw - 320px) / 1240));
-    column-gap: calc(20px + 20 * ((100vw - 320px) / 1240));
-  }
-}
-
-@media (min-width: 320px) and (max-width: 1560px) {
-  .header-socials {
-    -webkit-column-gap: calc(25px + 15 * ((100vw - 320px) / 1240));
-    -moz-column-gap: calc(25px + 15 * ((100vw - 320px) / 1240));
-    column-gap: calc(25px + 15 * ((100vw - 320px) / 1240));
   }
 }
 
