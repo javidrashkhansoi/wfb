@@ -18975,7 +18975,6 @@ if (eventsSlider) {
     },
     slidesPerView: 1,
     spaceBetween: 32,
-    loop: true,
     breakpoints: {
       993: {
         slidesPerView: 2,
@@ -18985,6 +18984,44 @@ if (eventsSlider) {
       }
     },
   });
+
+  /** @type {HTMLButtonElement} */
+  const button = document.querySelector(".events__link");
+  /** @type {NodeListOf<HTMLDivElement>} */
+  const eventCards = document.querySelectorAll(".event-card");
+
+  if (button && eventCards) {
+    /** @type {HTMLLIElement[]} */
+    const eventCardsParents = [...eventCards].map(eventCard => eventCard.parentElement);
+
+    if (eventCardsParents.length) {
+      const { last = "Завершенные события", future = "Будущие события" } = button.dataset;
+
+      let isLatest = false;
+
+      button.addEventListener("click", event => {
+        /** @type {{currentTarget: HTMLButtonElement}} */
+        const { currentTarget } = event;
+
+        if (isLatest) {
+          currentTarget.innerText = last;
+
+          eventCardsParents.forEach(parent => {
+            parent.toggleAttribute("hidden", parent.classList.contains("last"));
+          });
+        } else {
+          currentTarget.innerText = future;
+
+          eventCardsParents.forEach(parent => {
+            parent.toggleAttribute("hidden", parent.classList.contains("future"));
+          });
+        }
+
+        isLatest = !isLatest;
+        slider.update();
+      });
+    }
+  }
 }
 
 ;// CONCATENATED MODULE: ./src/js/libraries/swiper/sliders/article-slider.js

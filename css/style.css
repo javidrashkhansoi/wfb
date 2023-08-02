@@ -2337,6 +2337,8 @@ body::after {
 
 .events__arrow {
   font-size: 0;
+  transition-property: opacity;
+  transition-duration: 0.3s;
 }
 
 .events__arrow svg {
@@ -2348,6 +2350,13 @@ body::after {
 .events__arrow:focus-visible {
   outline: 1px solid;
   outline-offset: 5px;
+}
+
+.events__arrow.swiper-button-lock,
+.events__arrow.swiper-button-disabled {
+  display: block;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .events__arrow--next svg {
@@ -3434,7 +3443,9 @@ body::after {
   outline-offset: 5px;
 }
 
+.news-article__arrow.swiper-button-lock,
 .news-article__arrow.swiper-button-disabled {
+  display: block;
   opacity: 0;
   pointer-events: none;
 }
