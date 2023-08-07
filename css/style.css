@@ -812,6 +812,237 @@ dialog[open] {
 
 /* =====  End of Choices  ====== */
 
+[data-simplebar] {
+  position: relative;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  align-items: flex-start;
+}
+
+.simplebar-wrapper {
+  overflow: hidden;
+  width: inherit;
+  height: inherit;
+  max-width: inherit;
+  max-height: inherit;
+}
+
+.simplebar-mask {
+  direction: inherit;
+  position: absolute;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: auto !important;
+  height: auto !important;
+  z-index: 0;
+}
+
+.simplebar-offset {
+  direction: inherit !important;
+  box-sizing: inherit !important;
+  resize: none !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+}
+
+.simplebar-content-wrapper {
+  direction: inherit;
+  box-sizing: border-box !important;
+  position: relative;
+  display: block;
+  height: 100%;
+  /* Required for horizontal native scrollbar to not appear if parent is taller than natural height */
+  width: auto;
+  max-width: 100%;
+  /* Not required for horizontal scroll to trigger */
+  max-height: 100%;
+  /* Needed for vertical scroll to trigger */
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.simplebar-content-wrapper::-webkit-scrollbar,
+.simplebar-hide-scrollbar::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+}
+
+.simplebar-content:before,
+.simplebar-content:after {
+  content: " ";
+  display: table;
+}
+
+.simplebar-placeholder {
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  pointer-events: none;
+}
+
+.simplebar-height-auto-observer-wrapper {
+  box-sizing: inherit !important;
+  height: 100%;
+  width: 100%;
+  max-width: 1px;
+  position: relative;
+  float: left;
+  max-height: 1px;
+  overflow: hidden;
+  z-index: -1;
+  padding: 0;
+  margin: 0;
+  pointer-events: none;
+  flex-grow: inherit;
+  flex-shrink: 0;
+  flex-basis: 0;
+}
+
+.simplebar-height-auto-observer {
+  box-sizing: inherit;
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1000%;
+  width: 1000%;
+  min-height: 1px;
+  min-width: 1px;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.simplebar-track {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+[data-simplebar].simplebar-dragging {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-content {
+  pointer-events: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+[data-simplebar].simplebar-dragging .simplebar-track {
+  pointer-events: all;
+}
+
+.simplebar-scrollbar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 10px;
+}
+
+.simplebar-scrollbar:before {
+  position: absolute;
+  content: "";
+  background: black;
+  border-radius: 7px;
+  left: 2px;
+  right: 2px;
+  opacity: 0;
+  transition: opacity 0.2s 0.5s linear;
+}
+
+.simplebar-scrollbar.simplebar-visible:before {
+  opacity: 0.5;
+  transition-delay: 0s;
+  transition-duration: 0s;
+}
+
+.simplebar-track.simplebar-vertical {
+  top: 0;
+  width: 11px;
+}
+
+.simplebar-scrollbar:before {
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  right: 2px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  left: 0;
+  height: 11px;
+}
+
+.simplebar-track.simplebar-horizontal .simplebar-scrollbar {
+  right: auto;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  min-height: 0;
+  min-width: 10px;
+  width: auto;
+}
+
+/* Rtl support */
+
+[data-simplebar-direction=rtl] .simplebar-track.simplebar-vertical {
+  right: auto;
+  left: 0;
+}
+
+.simplebar-dummy-scrollbar-size {
+  direction: rtl;
+  position: fixed;
+  opacity: 0;
+  visibility: hidden;
+  height: 500px;
+  width: 500px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -ms-overflow-style: scrollbar !important;
+}
+
+.simplebar-dummy-scrollbar-size > div {
+  width: 200%;
+  height: 200%;
+  margin: 10px 0;
+}
+
+.simplebar-hide-scrollbar {
+  position: fixed;
+  left: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
 .ibg {
   position: relative;
   isolation: isolate;
@@ -819,7 +1050,8 @@ dialog[open] {
 }
 
 .ibg img,
-.ibg iframe {
+.ibg iframe,
+.ibg video {
   position: absolute;
   inset: 0;
   z-index: -2;
@@ -1259,6 +1491,10 @@ dialog[open] {
   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.1), 5px 7px 20px 0 rgba(0, 0, 0, 0.1), 22px 29px 36px 0 rgba(0, 0, 0, 0.09), 49px 64px 48px 0 rgba(0, 0, 0, 0.05), 87px 114px 57px 0 rgba(0, 0, 0, 0.01), 136px 178px 63px 0 rgba(0, 0, 0, 0);
 }
 
+.calendar-media .media-video-card__video {
+  aspect-ratio: 1/1;
+}
+
 .media-video-card__title {
   flex: 1 1 auto;
   -webkit-margin-after: 13px;
@@ -1588,10 +1824,6 @@ dialog[open] {
   --line-width: 85px;
   display: flex;
   align-items: center;
-  margin-inline: -15px;
-  padding: 15px;
-  overflow-x: auto;
-  overflow-y: hidden;
   -webkit-column-gap: 95px;
   -moz-column-gap: 95px;
   column-gap: 95px;
@@ -1657,14 +1889,29 @@ body::after {
   inset-inline: 0;
   z-index: 100;
   inline-size: 100%;
-  transition-property: background-color;
+  background-color: rgba(0, 12, 102, 0);
+  transition-property: background-color, visibility, -webkit-transform;
+  transition-property: background-color, transform, visibility;
+  transition-property: background-color, transform, visibility, -webkit-transform;
   transition-duration: 0.3s;
 }
 
-.scrolled .header--transparent .header__wrapper,
-.burger-active .header--transparent .header__wrapper,
 .header:not(.header--transparent) .header__wrapper {
   background-color: #000c66;
+}
+
+.header__wrapper--narrow {
+  background-color: #000c66;
+}
+
+.scrolled .header__wrapper--narrow {
+  transition-delay: 0.3s;
+}
+
+html:not(.scrolled) .header__wrapper--narrow {
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+  visibility: hidden;
 }
 
 .header__inner {
@@ -1675,13 +1922,10 @@ body::after {
   -moz-column-gap: 40px;
   column-gap: 40px;
   padding-block: 7px;
-  transition-property: min-block-size;
-  transition-duration: 0.3s;
-  min-block-size: 147px;
 }
 
-.scrolled .header__inner {
-  min-block-size: 0;
+.header__wrapper:not(.header__wrapper--narrow) .header__inner {
+  min-block-size: 147px;
 }
 
 .header-logo {
@@ -1691,8 +1935,6 @@ body::after {
 .header-logo__item {
   display: block;
   aspect-ratio: 107/105.51;
-  transition-property: inline-size;
-  transition-duration: 0.3s;
   inline-size: 107px;
 }
 
@@ -2119,6 +2361,9 @@ body::after {
 .footer-nav__link {
   line-height: 1.3;
   color: #fff;
+  will-change: color;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
   transition-property: color;
   transition-duration: 0.3s;
   font-size: 16px;
@@ -2153,6 +2398,9 @@ body::after {
   -webkit-filter: blur(45px);
   filter: blur(45px);
   opacity: 0.3;
+  will-change: filter;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 
 .footer-decor {
@@ -3231,9 +3479,11 @@ body::after {
 }
 
 .calendar-rewards__caption {
+  font-weight: 700;
+  font-size: 14px;
   line-height: 1.2;
-  color: #000;
-  font-size: 16px;
+  text-transform: lowercase;
+  color: #29c5ee;
 }
 
 .calendar-rewards__list {
@@ -3346,7 +3596,6 @@ body::after {
 
 .calendar-media {
   display: grid;
-  max-inline-size: 1074px;
   gap: 80px;
 }
 
@@ -3422,12 +3671,7 @@ body::after {
 }
 
 .news-article__slider {
-  display: grid;
-  grid-template-columns: 8px 1fr 8px;
-  align-items: center;
-  -webkit-column-gap: 24px;
-  -moz-column-gap: 24px;
-  column-gap: 24px;
+  position: relative;
   -webkit-margin-after: 68px;
   margin-block-end: 68px;
 }
@@ -3713,6 +3957,9 @@ body::after {
 }
 
 .sports-schools__links {
+  padding-block: 15px;
+  overflow-x: auto;
+  overflow-y: hidden;
   -webkit-margin-after: 67px;
   margin-block-end: 67px;
 }
@@ -4128,7 +4375,7 @@ body::after {
 }
 
 @media (min-width: 320px) {
-  .scrolled .header-logo__item {
+  .header__wrapper.header__wrapper--narrow .header-logo__item {
     inline-size: 38px;
   }
 
@@ -4163,6 +4410,12 @@ body::after {
 
   .media-gallery-photos {
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  }
+}
+
+@media (min-width: 365px) {
+  .calendar-media {
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
   }
 }
 
@@ -4379,8 +4632,13 @@ body::after {
     filter: blur(73px);
   }
 
-  .calendar-media {
-    grid-template-columns: 0.7404426559fr 1.2555331992fr;
+  .news-article__slider {
+    display: grid;
+    grid-template-columns: 8px 1fr 8px;
+    align-items: center;
+    -webkit-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
   }
 
   .wrestler-big-card {
@@ -4439,6 +4697,12 @@ body::after {
 }
 
 @media (min-width: 1251px) {
+  .scrolled .header__wrapper:not(.header__wrapper--narrow) {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: hidden;
+  }
+
   .header__inner {
     grid-template-columns: auto 1fr auto;
     -webkit-column-gap: 70px;
@@ -4532,12 +4796,6 @@ body::after {
 
   .main-media-header {
     justify-content: end;
-  }
-}
-
-@media (min-width: 1920px) {
-  .schools-links {
-    justify-content: center;
   }
 }
 
@@ -4741,7 +4999,7 @@ body::after {
     font-size: calc(12px + 6 * ((100vw - 320px) / 1240));
   }
 
-  .header__inner {
+  .header__wrapper:not(.header__wrapper--narrow) .header__inner {
     min-block-size: calc(52px + 95 * ((100vw - 320px) / 1240));
   }
 
@@ -5205,10 +5463,6 @@ body::after {
     padding-inline: calc(20px + 12 * ((100vw - 320px) / 1240));
   }
 
-  .calendar-rewards__caption {
-    font-size: calc(10px + 6 * ((100vw - 320px) / 1240));
-  }
-
   .calendar-rewards__item {
     font-size: calc(10px + 6 * ((100vw - 320px) / 1240));
   }
@@ -5626,6 +5880,25 @@ body::after {
 }
 
 @media (max-width: 1250px) {
+  .scrolled .header--transparent .header__wrapper,
+  .burger-active .header--transparent .header__wrapper,
+  .header:not(.header--transparent) .header__wrapper {
+    background-color: #000c66;
+  }
+
+  .header__wrapper--narrow {
+    display: none;
+  }
+
+  .header__inner {
+    transition-property: min-block-size;
+    transition-duration: 0.3s;
+  }
+
+  .scrolled.scrolled.scrolled .header__inner {
+    min-block-size: 0;
+  }
+
   .header-nav {
     position: fixed;
     inset-block-start: var(--header-height);
@@ -5746,6 +6019,31 @@ body::after {
     justify-content: space-between;
   }
 
+  .news-article__arrow {
+    position: absolute;
+    inset-block-start: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 30px;
+    aspect-ratio: 1/1;
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  .news-article__arrow--prev {
+    inset-inline-start: 5px;
+    -webkit-transform: translateY(-50%) rotate(180deg);
+    transform: translateY(-50%) rotate(180deg);
+  }
+
+  .news-article__arrow--next {
+    inset-inline-end: 5px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
   .history-card__content {
     order: 1;
   }
@@ -5799,6 +6097,17 @@ body::after {
     -webkit-column-gap: calc(25px + 15 * ((100vw - 1250px) / 310));
     -moz-column-gap: calc(25px + 15 * ((100vw - 1250px) / 310));
     column-gap: calc(25px + 15 * ((100vw - 1250px) / 310));
+  }
+}
+
+@media (min-width: 320px) and (max-width: 1250px) {
+  .header-logo__item {
+    transition-property: inline-size;
+    transition-duration: 0.3s;
+  }
+
+  .scrolled .header-logo__item {
+    inline-size: 38px;
   }
 }
 
@@ -6308,6 +6617,10 @@ body::after {
   }
 
   .news-slider-arrows__button svg {
+    stroke: #0b2b80;
+  }
+
+  .news-article__arrow svg {
     stroke: #0b2b80;
   }
 }
